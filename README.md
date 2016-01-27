@@ -1,10 +1,11 @@
-# 5star
-angular js rating
+# Dynamic rating of X stars
+
+
+implemented in an angular directive using materialize.
 
 
 
-para estudiantecr
 
 
-en la terminal correr el comando gulp para iniciar el servidor
 
+Run the command gulp in the terminal to start the server localhost:8080
