@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+<link rel="stylesheet" href="p.css">
+
+  </head>
+
+<body ng-app="RatingTutorial" ng-controller="RatingCtrl">
+  
+    <h3>Rating</h3>
+
+ <div ng-init="rating = ratinginicial"></div>
+
+<div class="star-rating" star-rating rating-value="rating"
+
+ data-max="5" on-rating-selected="rateFunction(rating)"></div>
+
+
+
+
+ <script type="text/javascript" src="bower_components/angular/angular.min.js"></script>
+ <script type="text/javascript" src="p.js"></script>
+</body>
+
+
+
+
