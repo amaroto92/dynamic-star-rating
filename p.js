@@ -1,6 +1,6 @@
 angular.module('RatingTutorial', [])
   .controller('RatingCtrl', function($scope) {
-    $scope.rating = 2;
+    $scope.rating = 5;
     $scope.rateFunction = function(rating) {
       alert('Rating selected ' + rating);
     };
@@ -13,17 +13,20 @@ angular.module('RatingTutorial', [])
 		return {
 			restrict : 'AE', //A’ – Attribute (You want to use your directive as <div rating>) ‘E’ – Element (Use it as <rating>)
 			template : '<ul class="rating">'
-					 + '<i ng-repeat="star in stars" ng-class="star" ng-click="toggle($index)" class="material-icons">'
+					 + '<li ng-repeat="star in stars" ng-class="star" ng-click="toggle($index)" class="material-icons">'
 					 + 'grade'
-					  + '</i>'
+					  + '</li>'
 					 + '</ul>',
 			scope : {
-				ratingValue :'=', // The ‘=’ for ratingValue indicates that ratingValue expects an object from the directive.
-				max : '=',
+				ratingValue :"=?", // The ‘=?’ for ratingValue indicates that ratingValue is optional expects an object from the directive.
+				max : '=', // The ‘=’expects an object from the directive.
 				onRatingSelected : '&' // The ‘&’ symbol tells  onRatingSelected  to expect a function, Server call. (not implemented)
 			},
 			link : function(scope, elem, attrs) { // link function to handle the click and call it from inside the template
-
+				if (scope.ratingValue == undefined) 
+				{
+     			 		scope.ratingValue = "-1";
+    			}
 				var updateStars = function() {
 					scope.stars = []; //There is also another variable on the scope called stars. We have not declared it inside the scope object because only those variables that need to passed in from the HTML are specified there.
 					for ( var i = 0; i < scope.max; i++) { //<!--The scope.max is variable is declared on the directive's scope to get the maximum value of the rating passed in through the HTML.-->

@@ -1,0 +1,26 @@
+{
+  "name": "estrellas",
+  "homepage": "https://github.com/amaroto92/estrellas",
+  "authors": [
+    "Andrés Maroto <amaroto92@gmail.com>"
+  ],
+  "description": "X star rating",
+  "main": "index.html",
+  "moduleType": [],
+  "keywords": [
+    "gotouch",
+    "estudiantecr"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "1.5.0-rc.1",
+    "Materialize": "materialize#^0.97.5"
+  }
+}
