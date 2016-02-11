@@ -1,15 +1,15 @@
 {
-  "name": "estrellas",
-  "homepage": "https://github.com/amaroto92/estrellas",
+  "name": "dynamic-star-rating",
+  "homepage": "https://github.com/amaroto92/dynamic-star-rating",
   "authors": [
     "Andrés Maroto <amaroto92@gmail.com>"
   ],
-  "description": "X star rating",
-  "main": "index.html",
+  "description": "Dynamic rating of X stars. Implemented with an angular directive using materialize.",
+  "main": ["dist/dynamic-star-rating.min.css","dist/dynamic-star-rating.min.js"],
   "moduleType": [],
   "keywords": [
-    "gotouch",
-    "estudiantecr"
+    "dynamic-star-rating",
+    "stars"
   ],
   "license": "MIT",
   "ignore": [
