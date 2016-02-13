@@ -13,7 +13,8 @@ angular
 			scope : {
 				ratingValue :"=?", // The ‘=?’ for ratingValue indicates that ratingValue is optional expects an object from the directive.
 				max : '=', // The ‘=’expects an object from the directive.
-				onRatingSelected : '&' // The ‘&’ symbol tells  onRatingSelected  to expect a function, Server call. (not implemented)
+				onRatingSelected : '&', // The ‘&’ symbol tells  onRatingSelected  to expect a function, Server call. (not implemented)
+				readonly: '@' // ability to make the rating only viewable.
 			},
 			link : function(scope, elem, attrs) { // link function to handle the click and call it from inside the template
 				if (scope.ratingValue == undefined)
@@ -33,6 +34,10 @@ angular
 				// The toggle() function has to be on the scope for it to be accessible from the template. The toggle() function increments or decrements the value of the scope.ratingValue according to the index. 
 				// This triggers the $watch() function which then updates the state of the stars.
 				scope.toggle = function(index) {
+					if (scope.readonly && scope.readonly === 'true') 
+						{
+            			return;
+         			 	}
 					scope.ratingValue = index + 1;
 					scope.onRatingSelected({
 						rating : index + 1
